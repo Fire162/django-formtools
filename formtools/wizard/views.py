@@ -611,7 +611,7 @@ class WizardView(TemplateView):
                     return context
         """
         if form is None:
-            form = kwargs.pop('form', None) or self.get_form()
+            form = self.get_form()
         context = super().get_context_data(form=form, **kwargs)
         context.update(self.storage.extra_data)
         context['wizard'] = {
